@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="test.css">
+  <link rel="stylesheet" href="aiPopover.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@32,400,0,0" />
+
+  <!-- Built Vue quiz app styles (copied from QuizAddOn/Quiz/dist/quiz.css) -->
+  <link rel="stylesheet" href="quiz-widget/quiz.css">
+
+  <title>Bigga Secure</title>
+</head>
+
+<body>
+
+  <nav>
+    <h2>BIGGA SECURE</h2>
+    <ul>
+      <li class="link-txt"><a href="index.html">Home</a></li>
+      <li class="link-txt"><a href="about.html">About</a></li>
+      <li class="link-txt"><a href="security.html">Security</a></li>
+      <li class="link-txt"><a href="future.html">Future</a></li>
+      <li class="link-txt"><a href="quiz.html">Quiz</a></li>
+      <button class="btn-ai collapsible" onclick="openAiHelper()" popovertarget="my-menu">Ai Helper</button>
+    </ul>
+  </nav>
+
+  <div id="my-menu" popover>
+    <div class="container">
+      <header class="ai-header">
+        <h1 class="heading">Verily thee</h1>
+        <h4 class="sub-heading">Any problem with the Website?</h4>
+      </header>
+      <ul class="suggestions">
+        <li class="suggestions-item">
+          <p class="text">What are the types of cyber threats are on every day life?</p>
+          <span class="icon material-symbols-rounded">draw</span>
+        </li>
+        <li class="suggestions-item">
+          <p class="text">What will be the development of Cybersecurity in the near future?</p>
+          <span class="icon material-symbols-rounded">lightbulb</span>
+        </li>
+        <li class="suggestions-item">
+          <p class="text">Suggest some useful tools for debugging JavaScript code.</p>
+          <span class="icon material-symbols-rounded">explore</span>
+        </li>
+      </ul>
+      <div class="chats-container"></div>
+      <div class="prompt-container">
+        <div class="prompt-wrapper">
+          <form action="#" class="prompt-form">
+            <input type="text" placeholder="Ask Gemini" class="prompt-input" required />
+            <div class="prompt-actions">
+              <div class="file-upload-wrapper">
+                <img src="#" class="file-preview" />
+                <input id="file-input" type="file" accept="image/*, .pdf, .txt, .csv" hidden />
+                <button type="button" class="file-icon material-symbols-rounded">description</button>
+                <button id="cancel-file-btn" type="button" class="material-symbols-rounded">close</button>
+                <button id="add-file-btn" type="button" class="material-symbols-rounded">attach_file</button>
+              </div>
+              <button id="stop-response-btn" type="button" class="material-symbols-rounded">stop_circle</button>
+              <button id="send-prompt-btn" class="material-symbols-rounded">arrow_upward</button>
+            </div>
+          </form>
+          <button id="theme-toggle-btn" class="material-symbols-rounded">light_mode</button>
+          <button id="delete-chats-btn" class="material-symbols-rounded">delete</button>
+        </div>
+        <p class="disclaimer-text">Bigga Security uses Gemini ai, so DOUBLE CHECK IT!!!!</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="AiUI.js"></script>
+
+  <!-- This is where the Vue quiz app mounts. main.js targets this exact id. -->
+  <main>
+    <div id="quiz-app"></div>
+  </main>
+
+  <!-- Built Vue quiz app script (copied from QuizAddOn/Quiz/dist/quiz.js) -->
+  <script type="module" src="quiz-widget/quiz.js"></script>
+
+</body>
+</html>

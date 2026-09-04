@@ -1,0 +1,23 @@
+[popover] {
+  border: 1px solid #064e30;
+  border-radius: 8px;
+  padding: 1vh;
+}
+
+/* Define how it looks when opened */
+[popover]:popover-open {
+
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 45%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+  max-height: 80vh;
+}
+
+/* Optional: Dim the background when the menu is active */
+[popover]::backdrop {
+  background: rgba(0, 0, 0, 0.01);
+}

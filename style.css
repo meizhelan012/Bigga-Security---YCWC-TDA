@@ -1,0 +1,281 @@
+/*Color Variables*/
+:root {
+  /* Dark theme colors - Green scheme from style.css */
+  --text-color: #d4e8de;
+  --subheading-color: #a8c9b8;
+  --placeholder-color: #7fa894;
+  --primary-color: #0a3d24;
+  --secondary-color: #1a5a35;
+  --secondary-hover-color: #2d7a4d;
+  --scrollbar-color: #4a8f68;
+  --border-color: rgb(97, 150, 97);
+}
+body.light-theme {
+  /* Light theme colors - Green scheme from style.css */
+  --text-color: #0b4f2b;
+  --subheading-color: #2d7a4d;
+  --placeholder-color: #5a8d6f;
+  --primary-color: #f0f7f3;
+  --secondary-color: #e0f0e7;
+  --secondary-hover-color: #d0e8db;
+  --scrollbar-color: #a8c9b8;
+  --border-color: rgb(97, 150, 97);
+}
+
+/*section 1*/
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background-color:linear-gradient(to bottom, #ffffff, #b4d4ba);
+  color:var(--primary-color);
+  overflow-x: hidden;
+}
+
+/* Navigation */
+
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:20px 40px;
+
+  background:var(--secondary-color);
+
+  backdrop-filter:blur(6px);
+
+  border-bottom:3px solid var(--border-color);
+
+  z-index:1000;
+}
+
+nav h2{
+  color:var(--text-color);
+  letter-spacing:2px;
+}
+
+/*Section 2*/
+
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:25px;
+}
+
+nav a{
+  color:var(--text-color);
+  text-decoration:none;
+  transition:0.3s;
+}
+/* Hero */
+
+.hero-page{
+  min-height:100vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+
+  position:relative;
+
+  background:
+  url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVBZOtTkUM7jFmlrrBxPNomndgYX7avk2jZA&s')
+  center/cover;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(rgba(255,255,255,0.6),
+  rgba(255,255,255,0.85));
+}
+
+.hero-content{
+  position:relative;
+  z-index:5;
+
+  max-width:900px;
+
+  padding:50px;
+
+  background:var(--primary-color);
+
+  border:1px solid rgba(11,79,43,0.08);
+  border-radius:30px;
+
+  backdrop-filter:blur(10px);
+}
+
+.hero-content h1{
+  font-size:60px;
+  margin-bottom:20px;
+  color:var(--text-color);
+}
+
+.hero-content p{
+  line-height:1.8;
+  margin-bottom:30px;
+  color:var(--text-color);
+}
+
+.link-txt{
+  padding-top:10px;
+}
+
+.btn-ai{
+  background-color: #0b4f2b;
+  border: #0b4f2b solid 10px;
+  border-radius:10px;
+  color:#ffffff;
+  transition:0.3s;
+}
+
+.main-button{
+  display:inline-block;
+
+  padding:15px 35px;
+  
+  background:
+  linear-gradient(135deg,#0f7a4a,#064e30);
+
+  border-radius:40px;
+
+  color:#ffffff;
+text-decoration: none;
+  font-weight:bold;
+
+  transition:0.3s;
+}
+
+.main-button:hover{
+  transform:translateY(-8px);
+}
+
+/* Section 3 */
+/* Pages */
+
+.content-page{
+  padding:150px 10%;
+  padding-bottom:300px;
+}
+
+.content-page h1{
+  font-size:3rem;
+  margin-bottom:25px;
+
+  color:var(--text-color);
+}
+
+.content-page p{
+  line-height:1.9;
+  max-width:900px;
+
+  color:var(--text-color);
+}
+
+/* Cards */
+
+.card-grid{
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(280px,1fr));
+
+  gap:30px;
+
+  margin-top:50px;
+}
+
+.glass-card{
+  margin-top:40px;
+
+  padding:30px;
+
+  background:var(--primary-color);
+
+  border:5px solid var(--border-color);
+  border-radius:25px;
+
+  transition:0.4s;
+}
+
+.glass-card:hover{
+  transform:translateY(-10px);
+
+  border-color:#0f7a4a;
+
+  box-shadow:
+  0 0 25px rgba(11,79,43,0.08);
+}
+
+.glass-card h2{
+  margin-bottom:15px;
+
+  color:var(--text-color);
+}
+
+/* Bouncing Animation */
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+}
+
+section.quiz{
+  padding:50px;
+  display:grid;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.quizSubmit{
+  display:inline-block;
+  padding:10px 20px;
+  background:linear-gradient(135deg,#0f7a4a,#064e30);
+  border-radius:10px;
+  color:#ffffff;
+  transition:0.3s;
+}
+
+.quizInput{
+  padding:10px;
+  border:1px solid rgba(11,79,43,0.06);
+  border-radius:10px;
+  width:200px;
+}
+
+.quizSubmit:hover{
+  transform:translateY(-5px);
+}
+
+.btn-ai:hover{
+  transform:translateY(-5px);
+  background-color: #064e30;
+  border: #064e30 solid 10px;
+}

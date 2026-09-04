@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Methods | Bigga Secure</title>
+  <link rel="stylesheet" href="test.css">
+  <link rel="stylesheet" href="aiPopover.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@32,400,0,0" />
+</head>
+
+<body>
+<script src="typewriter.js"></script>
+  <nav>
+    <h2>BIGGA SECURE</h2>
+
+    <ul>
+      <li class="link-txt"><a href="index.html">Home</a></li>
+      <li class="link-txt"><a href="about.html">About</a></li>
+      <li class="link-txt"><a href="security.html">Security</a></li>
+      <li class="link-txt"><a href="future.html">Future</a></li>
+      <li class="link-txt"><a href="quiz.html">Quiz</a></li>
+      <button class="btn-ai collapsible" onclick="openAiHelper()" popovertarget="my-menu">Ai Helper</button>
+    </ul>
+  </nav>
+
+<div id="my-menu" popover>
+<div class="container">
+      <!-- AI Header -->
+      <header class="ai-header">
+        <h1 class="heading">Verily thee</h1>
+        <h4 class="sub-heading">Any problem with the Website?</h4>
+      </header>
+      <!-- Suggestions List -->
+      <ul class="suggestions">
+        <li class="suggestions-item">
+          <p class="text">What are the types of cyber threats are on every day life?</p>
+          <span class="icon material-symbols-rounded">draw</span>
+        </li>
+        <li class="suggestions-item">
+          <p class="text">What will be the development of Cybersecurity in the near future?</p>
+          <span class="icon material-symbols-rounded">lightbulb</span>
+        </li>
+        <li class="suggestions-item">
+          <p class="text">Suggest some useful tools for debugging JavaScript code.</p>
+          <span class="icon material-symbols-rounded">explore</span>
+        </li>
+      </ul>
+
+      <!-- Chats -->
+      
+      <div class="chats-container"></div>
+      <!-- Prompt Input -->
+      <div class="prompt-container">
+        <div class="prompt-wrapper">
+          <form action="#" class="prompt-form">
+            <input type="text" placeholder="Ask Gemini" class="prompt-input" required />
+            <div class="prompt-actions">
+              <!-- File Upload Wrapper -->
+              <div class="file-upload-wrapper">
+                <img src="#" class="file-preview" />
+                <input id="file-input" type="file" accept="image/*, .pdf, .txt, .csv" hidden />
+                <button type="button" class="file-icon material-symbols-rounded">description</button>
+                <button id="cancel-file-btn" type="button" class="material-symbols-rounded">close</button>
+                <button id="add-file-btn" type="button" class="material-symbols-rounded">attach_file</button>
+              </div>
+              <!-- Send Prompt and Stop Response Buttons -->
+              <button id="stop-response-btn" type="button" class="material-symbols-rounded">stop_circle</button>
+              <button id="send-prompt-btn" class="material-symbols-rounded">arrow_upward</button>
+            </div>
+          </form>
+          <!-- Theme and Delete Chats Buttons -->
+          <button id="theme-toggle-btn" class="material-symbols-rounded">light_mode</button>
+          <button id="delete-chats-btn" class="material-symbols-rounded">delete</button>
+        </div>
+        <p class="disclaimer-text">Bigga Security uses Gemini ai, so DOUBLE CHECK IT!!!!</p>
+      </div>
+    </div>
+</div>
+
+<script src="AiUI.js"></script>
+
+  <section class="content-page">
+
+    <h1>Core Protection Systems</h1>
+
+    <div class="card-grid">
+
+      <div class="glass-card">
+        <h2>Strong Passwords</h2>
+        <p>One of the basic steps in digital security is using a strong password. A strong password combines uppercase and lowercase letters, numbers, and symbols. It is also important to change passwords regularly and avoid using the same password for multiple accounts.</p>
+      </div>
+
+      <div class="glass-card">
+        <h2>2FA Authentication</h2>
+        <p>Two-Factor Authentication is a security method that requires users to verify their identity in two different ways before accessing an account or system. Typically, 2FA combines something the user knows, such as a password, with something the user has, such as a code sent to their phone.</p>
+      </div>
+
+      <div class="glass-card">
+        <h2>Encryption</h2>
+        <p>Encryption is the process of converting data into code that cannot be read without the correct encryption key. By encrypting data, even if an unauthorized person gains access to it, they will not be able to understand or use it.</p>
+      </div>
+
+      <div class="glass-card">
+        <h2>Firewall & Antivirus</h2>
+        <p>A firewall acts as a barrier between internal and external networks, preventing unauthorized access to a system. Antivirus software, meanwhile, is designed to detect and remove malicious software that could harm data and devices.</p>
+      </div>
+
+      <div class="glass-card">
+        <h2>Biometric Security</h2>
+        <p>Biometric data includes characteristics such as a person's face or fingerprints. Using biometrics for verification and authentication is a digital security measure that helps protect personal data from theft and modification.</p>
+      </div>
+
+      <div class="glass-card">
+        <h2>Cyber Awareness</h2>
+        <p>Information about cybersecurity is increasingly easy to find online. Expand your digital literacy with cybersecurity resources, especially those focused on preventing fraud. Learn more about phishing, social engineering, identity theft, and other threats.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
+</html>
