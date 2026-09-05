@@ -7,8 +7,6 @@ import Result from "./components/Leaderboard.vue";
 
 import { ref } from 'vue';
 
-console.log("AQ.Ab8RN6IzUJJZyS3gZMf419zQUzg7di43T4EYXCsafbThUGyYXA");
-
 const questions = ref('');
 const status = ref('start');
 const userAnswers = ref([]);
