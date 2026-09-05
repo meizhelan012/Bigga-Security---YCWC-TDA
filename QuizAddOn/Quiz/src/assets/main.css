@@ -1,0 +1,286 @@
+@import './base.css';
+ 
+/* ---------- layout shell ---------- */
+ 
+#quiz-app {
+  max-width: 720px;
+  margin: 6rem auto 3rem;
+  padding: 0 1.5rem 3rem;
+}
+ 
+#quiz-app a {
+  color: var(--secondary-hover-color, #2d7a4d);
+  text-decoration: none;
+  transition: 0.3s;
+}
+ 
+#quiz-app a:hover {
+  text-decoration: underline;
+}
+ 
+/* ---------- header / signature ---------- */
+ 
+#quiz-app header .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+ 
+#quiz-app .logo {
+  width: 40px;
+  height: 40px;
+}
+ 
+#quiz-app header h1 {
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  color: var(--text-color, #d4e8de);
+  font-weight: 700;
+}
+ 
+#quiz-app header h1::after {
+  content: '_';
+  color: var(--scrollbar-color, #4a8f68);
+  animation: quiz-cursor-blink 1.1s steps(1) infinite;
+}
+ 
+@keyframes quiz-cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  #quiz-app header h1::after {
+    animation: none;
+  }
+}
+ 
+/* ---------- shared "panel" look ---------- */
+ 
+#quiz-app .container.start-screen,
+#quiz-app .container.vue-quiz,
+#quiz-app .container.result-screen {
+  background: linear-gradient(160deg, var(--primary-color, #0a3d24), var(--secondary-color, #1a5a35));
+  border: 1px solid var(--border-color, rgb(97, 150, 97));
+  border-radius: 14px;
+  padding: 2.5rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+ 
+/* ---------- start screen ---------- */
+ 
+#quiz-app .start-screen h2 {
+  color: var(--text-color, #d4e8de);
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+ 
+#quiz-app .start-screen input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color, rgb(97, 150, 97));
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--text-color, #d4e8de);
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+ 
+#quiz-app .start-screen input::placeholder {
+  color: var(--placeholder-color, #7fa894);
+}
+ 
+#quiz-app .start-screen input:focus-visible {
+  outline: 2px solid var(--scrollbar-color, #4a8f68);
+  outline-offset: 2px;
+}
+ 
+#quiz-app .start-screen button,
+#quiz-app .vue-quiz > button,
+#quiz-app .result-screen button {
+  display: block;
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #1a5a35;
+  color: var(--primary-color, #0a3d24);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 1rem;
+}
+ 
+#quiz-app .start-screen button:hover:not(:disabled),
+#quiz-app .vue-quiz > button:hover,
+#quiz-app .result-screen button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+ 
+#quiz-app .start-screen button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+ 
+#quiz-app .start-screen small.error {
+  display: block;
+  margin-top: 0.75rem;
+  color: #e2a13d;
+  text-align: center;
+}
+ 
+/* ---------- quiz screen ---------- */
+ 
+#quiz-app .vue-quiz .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+ 
+#quiz-app .vue-quiz .header h2 {
+  color: var(--text-color, #d4e8de);
+  letter-spacing: 1.5px;
+}
+ 
+#quiz-app .vue-quiz .header p {
+  color: var(--placeholder-color, #7fa894);
+  font-size: 0.9rem;
+}
+ 
+#quiz-app .vue-quiz progress {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  appearance: none;
+  margin-bottom: 1.75rem;
+}
+ 
+#quiz-app .vue-quiz progress::-webkit-progress-bar {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+ 
+#quiz-app .vue-quiz progress::-webkit-progress-value {
+  background: var(--scrollbar-color, #4a8f68);
+  border-radius: 4px;
+}
+ 
+#quiz-app .vue-quiz progress::-moz-progress-bar {
+  background: var(--scrollbar-color, #4a8f68);
+  border-radius: 4px;
+}
+ 
+#quiz-app .vue-quiz .vue-question h3 {
+  color:  #3dc380;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+ 
+#quiz-app .vue-quiz .answers {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+ 
+#quiz-app .vue-quiz .answer {
+  text-align: left;
+  padding: 0.9rem 1.1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color, rgb(97, 150, 97));
+  margin-left : 12px;
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--text-color, #d4e8de);
+  cursor: pointer;
+  transition: 0.2s;
+}
+ 
+#quiz-app .vue-quiz .answer:hover {
+  border-color: var(--scrollbar-color, #4a8f68);
+}
+ 
+#quiz-app .vue-quiz .answer.active {
+  background: var(--secondary-hover-color, #2d7a4d);
+  border-color: var(--secondary-hover-color, #2d7a4d);
+  color: #ffffff;
+}
+ 
+/* ---------- loading state ---------- */
+ 
+#quiz-app .loader {
+  width: 44px;
+  height: 44px;
+  margin: 4rem auto;
+  border-radius: 50%;
+  border: 4px solid rgba(74, 143, 104, 0.25);
+  border-top-color: var(--scrollbar-color, #4a8f68);
+  animation: quiz-spin 0.8s linear infinite;
+}
+ 
+@keyframes quiz-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  #quiz-app .loader {
+    animation-duration: 2.4s;
+  }
+}
+ 
+/* ---------- results screen ---------- */
+ 
+#quiz-app .result-screen {
+  text-align: center;
+}
+ 
+#quiz-app .result-screen h1 {
+  color: var(--text-color, #d4e8de);
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+ 
+#quiz-app .result-screen ul {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  display: grid;
+  gap: 0.75rem;
+}
+ 
+#quiz-app .result-screen li {
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  border-left: 4px solid var(--border-color, rgb(97, 150, 97));
+}
+ 
+#quiz-app .result-screen li.correct {
+  border-left-color: var(--scrollbar-color, #4a8f68);
+}
+ 
+#quiz-app .result-screen li.incorrect {
+  border-left-color: #c96a4a;
+}
+ 
+#quiz-app .result-screen li b {
+  display: block;
+  color: var(--text-color, #d4e8de);
+  margin-bottom: 0.4rem;
+}
+ 
+#quiz-app .result-screen li p {
+  color: var(--placeholder-color, #7fa894);
+  font-size: 0.9rem;
+  margin: 0.15rem 0;
+}
